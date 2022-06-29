@@ -5,7 +5,7 @@
  * @desc Given `Promises[]`
  *
  */
-export function parallelizeWorkTasks(promises, parallelExecutionMax) {
+export function parallelizeWorkTasks(promises, parallelExecutionMax) : Promise<string>[] {
 
     throw new Error("Not Implemented");
 

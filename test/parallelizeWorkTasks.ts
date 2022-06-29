@@ -40,7 +40,7 @@ describe('parallelizeWorkTasks', () => {
             work('c'),
         ];
 
-        return (<any>parallelizeWorkTasks(tasks, 3)).should.be.rejectedWith("test error")
+        return (parallelizeWorkTasks(tasks, 3)).should.be.rejectedWith("test error")
 
     });
 

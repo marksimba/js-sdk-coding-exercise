@@ -18,7 +18,7 @@ export default class AccountClient {
                 });
             }
 
-            throw 'Unknown user';
+            reject('Unknown user');
 
         });
     }

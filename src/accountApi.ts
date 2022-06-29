@@ -4,12 +4,13 @@ import AccountClient from './accountClient';
  *
  */
 export default class AccountApi {
+    private accountClient: AccountClient;
 
     /**
      *
      */
     constructor() {
-        (<any>this).accountClient = new AccountClient();
+        this.accountClient = new AccountClient();
     }
 
     /**
@@ -20,7 +21,7 @@ export default class AccountApi {
      *
      */
     async login(email, password) {
-        (<any>this).accountClient.login(email, password);
+        this.accountClient.login(email, password);
     }
 
 }
