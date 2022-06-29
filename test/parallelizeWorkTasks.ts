@@ -4,7 +4,7 @@ import {
 } from '../src/parallelizeWorkTasks';
 
 // utility to simulate some future work
-function work(value) {
+function work(value: string) {
     return () => {
         if (value === 'err') {
             return Promise.reject(new Error('test error'));
@@ -46,7 +46,7 @@ describe('parallelizeWorkTasks', () => {
 
     it('Should process empty array of promises', async () => {
 
-        const tasks = [];
+        const tasks: Promise<string>[] = [];
 
         const results = await parallelizeWorkTasks(tasks, 3);
 

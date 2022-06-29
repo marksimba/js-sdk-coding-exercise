@@ -14,14 +14,23 @@ export default class AccountApi {
     }
 
     /**
-     *
-     * @param {String} email
-     * @param {Boolean} password
-     * @returns {Object} The account object.
+     * Attemps to login using the email and password. Logs all login attempts.
+     * @param {string} email
+     * @param {string} password
+     * @returns {User} The account object.
      *
      */
-    async login(email, password) {
-        this.accountClient.login(email, password);
+    async login(email: string, password: string) {
+        // TODO: Implement logging class and log to track logins
+        try{
+            const account = await this.accountClient.login(email, password);
+            // TODO: Log successful login
+            return account;
+        }
+        catch(e){
+            // TODO: Log failed login
+            Promise.reject(e);
+        }
     }
 
 }
