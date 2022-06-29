@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha",
+    "test": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha -r ts-node/register 'test/*.ts'",
     "lint": "eslint . --ext .ts",
     "prepare": "husky install"
   },
