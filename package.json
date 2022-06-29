@@ -22,6 +22,7 @@
     "babel-loader": "^8.2.5",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-mocha": "^10.0.5",
     "husky": ">=6",
     "lint-staged": ">=10",
     "mocha": "^10.0.0",
