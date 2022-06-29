@@ -11,7 +11,7 @@ function work(value: string) {
         }
 
         return new Promise((r) => {
-            setTimeout(() => r(value), Math.random() * 2000);
+            setTimeout(() => r(value), Math.random() * 500);
         });
     };
 }
