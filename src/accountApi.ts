@@ -14,9 +14,10 @@ export default class AccountApi {
     }
 
     /**
-     * Attemps to login using the email and password. Logs all login attempts.
+     * 
      * @param {string} email
      * @param {string} password
+     * @desc Given email and password, attempt to login. Log all login attempts.
      * @returns {User} The account object.
      *
      */
