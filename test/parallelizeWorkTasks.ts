@@ -4,14 +4,14 @@ import {
 } from '../src/parallelizeWorkTasks';
 
 // utility to simulate some future work
-function work(value) {
-    return () => {
+function work(value: string) {
+    return (): Promise<string>  => {
         if (value === 'err') {
             return Promise.reject(new Error('test error'));
         }
 
         return new Promise((r) => {
-            setTimeout(() => r(value), Math.random() * 2000);
+            setTimeout(() => r(value), Math.random() * 500);
         });
     };
 }
@@ -40,13 +40,13 @@ describe('parallelizeWorkTasks', () => {
             work('c'),
         ];
 
-        return (<any>parallelizeWorkTasks(tasks, 3)).should.be.rejectedWith("test error")
+        return (parallelizeWorkTasks(tasks, 3)).should.be.rejectedWith("test error")
 
     });
 
     it('Should process empty array of promises', async () => {
 
-        const tasks = [];
+        const tasks: (() => Promise<string>)[] = [];
 
         const results = await parallelizeWorkTasks(tasks, 3);
 

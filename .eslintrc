@@ -1,0 +1,30 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:mocha/recommended",
+        "prettier"
+    ],
+    "rules": {
+        // TODO: If I had more time, I'd like to fine-tune/add to the rules.
+        "no-console": ["error", { "allow": ["warn", "error"] }]
+    },
+    "overrides": [
+        {
+            "files": ["test/*.ts"],
+            "rules": {
+                "mocha/no-mocha-arrows": "off"
+            }
+        },
+        {
+            "files": ["*.ts"],
+            "rules": {
+                "@typescript-eslint/no-explicit-any": "error"
+            }
+        }
+    ]
+}
